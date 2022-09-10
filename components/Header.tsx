@@ -14,12 +14,12 @@ function Header() {
         <div className='flex items-center space-x-2'>
             <img 
             className='rounded-full h-20 w-20 cursor-pointer' 
-            src='https://i.imgur.com/uPvFvZe.jpg' 
+            src='https://i.imgur.com/kL9KNhv.jpg' 
             alt=''
             onClick={openAccountModal}
         />
         <div>
-            <h1 className='text-lg text-white font-bold'>SKU LOTTERY 🎰</h1>
+            <h1 className='text-lg text-white font-bold'>DILDAO LOTTERY 🎰</h1>
             <p className='text-xs text-emerald-500 truncate'>User: {address?.substring(0,5)}...{address?.substring(address.length, address.length - 5)}</p>
         </div>
         </div>

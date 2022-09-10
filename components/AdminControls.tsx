@@ -13,31 +13,31 @@ import toast from 'react-hot-toast';
 function AdminControls() {
 
     const {data: totalCommission } = useContractRead({
-        addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+        addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
         contractInterface: abi,
         functionName: 'operatorTotalCommission'
     })
 
     const { config: drawWinnerConfig , error: drawWinnerError, isSuccess: drawWinnerSuccess } = usePrepareContractWrite({
-        addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+        addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
         contractInterface: abi,
         functionName: 'DrawWinnerTicket'
     })
 
     const { config: withdrawConfig , error: withdrawError, isSuccess: withdrawSuccess } = usePrepareContractWrite({
-        addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+        addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
         contractInterface: abi,
         functionName: 'WithdrawCommission'
     })
 
     const { config: restartConfig , error: restartError, isSuccess: restartSuccess } = usePrepareContractWrite({
-        addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+        addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
         contractInterface: abi,
         functionName: 'restartDraw'
     })
 
     const { config: refundConfig , error: refundError, isSuccess: refundSuccess } = usePrepareContractWrite({
-        addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+        addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
         contractInterface: abi,
         functionName: 'RefundAll'
     })
@@ -91,7 +91,7 @@ function AdminControls() {
         const notification = toast.loading('Refunding Participants...');
 
         try {
-            if (withdrawSuccess) {
+            if (refundSuccess) {
                 await RefundAll?.()
 
                 toast.success("Successfully refunded participants!", {
@@ -111,7 +111,7 @@ function AdminControls() {
         const notification = toast.loading('Restarting draw...');
 
         try {
-            if (withdrawSuccess) {
+            if (restartSuccess) {
                 await RestartDraw?.()
 
                 toast.success("Successfully restarted the draw!", {

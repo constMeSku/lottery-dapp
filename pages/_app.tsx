@@ -8,12 +8,12 @@ import { Toaster } from 'react-hot-toast';
 
 
 const { chains, provider } = configureChains(
-  [chain.rinkeby],
+  [chain.mainnet],
   [publicProvider()]
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'SKU LOTTERY',
+  appName: 'DILDAO LOTTERY',
   chains
 });
 

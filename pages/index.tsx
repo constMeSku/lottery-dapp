@@ -22,70 +22,72 @@ const Home: NextPage = () => {
   const provider = useProvider()
 
   const { data: remainingTickets} = useContractRead({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'RemainingTickets',
     watch: true
   })
 
   const { data: winnings } = useContractRead({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'getWinningsForAddress',
-    args: address
+    args: address,
+    watch: true
   })
 
   const { data: expiration } = useContractRead({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'expiration'
   })
 
   const {data: currentWinningReward } = useContractRead({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'CurrentWinningReward',
     watch: true
   })
 
   const { data: tickets } = useContractRead({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'getTickets',
+    watch: true
   })
 
   const {data: currentTicketPrice } = useContractRead({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'ticketPrice',
   })
 
   const {data: ticketComission } = useContractRead({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'ticketCommission'
   })
 
   const {data: lastWinner } = useContractRead({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'lastWinner'
   })
 
   const {data: lastWinnerAmount } = useContractRead({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'lastWinnerAmount'
   })
 
   const {data: isLotteryOperator } = useContractRead({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'lotteryOperator'
   })
 
   const { config: buyConfig, error: buyError, isSuccess: buySuccess } = usePrepareContractWrite({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'BuyTickets',
     overrides: {
@@ -95,7 +97,7 @@ const Home: NextPage = () => {
   })
 
   const { config: withdrawConfig, error: withdrawError, isSuccess: withdrawSuccess } = usePrepareContractWrite({
-    addressOrName: '0xde1bAf277C6095d78A1B9938D2376dFd900Ff434',
+    addressOrName: '0xE84D04412BF4a6bD5c6d2354b272aF098ae0F723',
     contractInterface: abi,
     functionName: 'WithdrawWinnings',
   })
@@ -167,7 +169,7 @@ const Home: NextPage = () => {
   return (
     <div className="bg-[#091B18] min-h-screen flex flex-col">
       <Head>
-        <title>Lottery App</title>
+        <title>DILDAO LOTTERY </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -268,7 +270,7 @@ const Home: NextPage = () => {
       </div>
 
       <footer className='border-t border-emerald-500/20 flex items-center text-center text-white p-5 md:mt-80'>
-          <img className='h-10 w-10 filter hue-rotate-30 opacity-20 rounded-full' src='https://i.imgur.com/uPvFvZe.jpg' alt=''></img>
+          <img className='h-10 w-10 filter hue-rotate-30 opacity-20 rounded-full' src='https://i.imgur.com/kL9KNhv.jpg' alt=''></img>
           <p className='text-xs text-emerald-900 pl-5'> DISCLAIMER: PURCHASING A LOTTERY TICKET IS CONSIDERED GAMBLING. THEREFORE YOU FALL RESPONSIBLE OF THE FUNDS YOU DEPOSIT IN THE CONTRACT. PLEASE DEGEN RESPONSIBLY AS ALWAYS! GOODLUCK TO ALL PARTICIPANTS 🍀 </p>
       </footer>
     </div>
